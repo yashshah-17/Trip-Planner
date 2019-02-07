@@ -1,0 +1,248 @@
+/* form */
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f004";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #e50039;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #ff003b;  } 
+
+body{
+    /*background:#ffaa55;
+	background-color:lightblue;*/
+	background-image:url("mountains-hills-scenic-trees-forest-sunrise-sunset-morning-dawn-fog-mist-sky-high-resolution_new.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	margin-top:-45px;
+}
+.form-body{
+    background:#5af;
+    padding:30px 20px 20px 20px;
+	width:400px;
+	margin-bottom:10px;	
+    margin-top:40px;
+    border-radius: 45px;
+}
+.login-form{
+    background:rgb(100,120,150);
+	padding:20px;
+	border-top:3px solid#3e4043;
+}
+.innter-form{
+	padding-top:20px;
+}
+.final-login li{
+	width:50%;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+.nav-tabs>li{
+	color:#222;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #fff;
+    background-color:#e64b3b;
+    border: none;
+    border-bottom-color: transparent;
+	border-radius:5px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: none;
+    border-radius:none;
+	text-transform:uppercase;
+	font-size:16px;
+}
+
+.social-login{
+	text-align:center;
+	font-size:12px;
+}
+.social-login p{
+	margin:15px 0;
+}
+.social-login ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.social-login ul li{
+	width:33%;
+	float:left;
+    clear:both;
+}
+.social-login ul li a{
+	font-size:13px;
+	color:#fff;
+	text-decoration:none;
+	padding:10px 0;
+	display:block;
+}
+.social-login ul li:nth-child(1) a{
+	background:#3b5998;
+}
+.social-login ul li:nth-child(2) a{
+	background:#e74c3d;
+}
+.social-login ul li:nth-child(3) a{
+	background:#3698d9;
+}
+.sa-innate-form input[type=text], input[type=numeric], input[type=file], input[type=city],input[type=date],textarea, email{
+    font-size:15px;
+	padding:5px;
+	border:1px solid#ccc;
+	border-radius:5px;
+	outline:none;
+	width:100%;
+	margin:8px 0;
+	
+}
+.sa-innate-form input[type=submit]{
+    border:1px solid#e64b3b;
+	background:#e64b3b;
+	color:#fff;
+	padding:10px 25px;
+	font-size:14px;
+	margin-top:5px;
+	}
+	.sa-innate-form input[type=submit]:hover{
+	border:1px solid#db3b2b;
+	background:#db3b2b;
+	color:#fff;
+	}
+	
+	.sa-innate-form button{
+	border:1px solid green;
+	background:green;
+	color:#fff;
+	padding:10px 25px;
+	font-size:15px;
+	margin-top:5px;
+	margin-left:90px;
+	border-radius:7px;
+	
+	}
+	.sa-innate-form button:hover{
+	border:1px solid green;
+	background:green;
+	color:#fff;
+	}
+    .sa-innate-form p{
+        font-size:13px;
+        padding-top:10px;
+		
+    }
+	select.form-control
+	{
+	font-size:15px;
+	padding:5px;
+	border:1px solid#ccc;
+	border-radius:5px;
+	outline:none;
+	width:50%;
+	margin:8px 0;
+	}
+	select.form-control1
+	{
+	font-size:15px;
+	padding:5px;
+	border:1px solid#ccc;
+	border-radius:5px;
+	outline:none;
+	width:25%;
+	margin:8px 0;
+		
+	}
+	.rating {
+    float:left;
+}
+
+/* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+   follow these rules. Every browser that supports :checked also supports :not(), so
+   it doesn’t make the test unnecessarily selective */
+/*.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: "? ";
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+	 left:2px;
+}	

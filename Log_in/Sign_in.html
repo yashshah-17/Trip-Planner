@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trip Planner-Sign Up/Log In</title>
+<link rel="icon" type="image/jpeg" href="old-retro-antique-vintage-163194.jpeg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Validation -->
+<!-- <script> 
+$("#commentForm").validate();
+
+</script>-->
+<script>
+function validate_sign_in() {
+    var x = document.forms["myForm1"]["username"].value;
+    if (x == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+    var y = document.forms["myForm1"]["password"].value;
+    if (y == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+}
+    
+function validate_log_in() {
+    var a = document.forms["myForm2"]["name"].value;
+    if (a == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    else if(a.search("[0-9]")!=-1){
+        alert("No Digits are allowed in the name");
+        return false;
+    }
+    var c = document.forms["myForm2"]["dob"].value;
+    if (c == "") {
+        alert("Date of birth must be filled out");
+        return false;
+    }/*validation of date is left*/
+    
+    var d = document.forms["myForm2"]["email"].value;
+    if (d == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+    var e = document.forms["myForm2"]["username"].value;
+    if (e == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+    else if ((e.length)<8) {
+        alert("Username length should be atleast 5");
+        return false;
+    }
+    var f = document.forms["myForm2"]["password"].value;
+    if (f == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+    else if ((f.length)<8) {
+        alert("Password length should be atleast 8");
+        return false;
+    }
+}
+</script>
+<!-- End Validation -->
+    
+</head>
+<body>
+    <?php include 'Sign_in.php';?>
+<div class="overlay"></div>
+<div class="container">
+	<div class="row">
+        <br><br>
+		<h2 class="tnt">Form Registration</h2><br>
+	</div>
+</div>
+<br>
+<br>
+<div class="container login-body">
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+
+<div class="form-body">
+ 
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Log In</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Sign Up</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" name="myForm1" action="http://localhost:8080/PHP/Website/Log_in/Sign_in_2.php" onsubmit="return validate_sign_in()">
+            <label>Username</label>
+            <input type="text" name="username" autocomplete="on"><br><br>
+            <label>Password</label>
+            <input type="password" name="password">
+            <br><br><br><br>
+            <a href="">Forgot Password?</a>
+            <button type="submit" value="Submit">Sign In</button>
+            </form>
+            </div>
+            <div class="clearfix"></div>
+            
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+			<div class="innter-form">
+            <form class="sa-innate-form" method="post" name="myForm2" action="http://localhost:8080/PHP//Website/Log_in/Sign_in.php" onsubmit="return validate_log_in()">
+            <label>Full Name</label>
+            <input type="text" name="name"><br><br>
+            <label>Gender</label>
+            <select name="gender"> <!-- height isn't getting edited-->
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            </select><br><br>
+            <label>Date of Birth</label>
+            <input type="date" name="dob"><br><br>
+			<label>Email Address</label><br>
+            <input type="email" name="email" size="47"><br><br>
+			<label>Username</label>
+            <input type="text" name="username"><br><br>
+			<label>Password</label>
+            <input type="password" name="password"><br>
+			<br><br>
+            <button type="submit" value="Submit">Register Now</button>
+            </form>
+            </div>
+   
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+
+
+
+
+<!--PHP file data-->
+<!--<!DOCTYPE html>
+<html>
+<head>
+<title>Trip Planner-Sign Up/Log In</title>
+<link rel="icon" type="image/jpeg" href="old-retro-antique-vintage-163194.jpeg">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery library 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+<!-- Validation -->
+<!-- <script> 
+$("#commentForm").validate();
+
+</script>-->
+<!--<script>
+function validate_sign_in() {
+    var x = document.forms["myForm1"]["username"].value;
+    if (x == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+    var y = document.forms["myForm1"]["password"].value;
+    if (y == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+}
+    
+function validate_log_in() {
+    var a = document.forms["myForm2"]["name"].value;
+    if (a == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    else if(a.search("[0-9]")!=-1){
+        alert("No Digits are allowed in the name");
+        return false;
+    }
+    var c = document.forms["myForm2"]["dob"].value;
+    if (c == "") {
+        alert("Date of birth must be filled out");
+        return false;
+    }/*validation of date is left*/
+    
+    var d = document.forms["myForm2"]["email"].value;
+    if (d == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+    var e = document.forms["myForm2"]["username"].value;
+    if (e == "") {
+        alert("Username must be filled out");
+        return false;
+    }
+    var f = document.forms["myForm2"]["password"].value;
+    if (f == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+    else if ((f.length)<8) {
+        alert("Password length should be atleast 8");
+        return false;
+    }
+}
+</script>-->
+<!-- End Validation -->
+    
+<!--</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+	<div class="row">
+        <br><br>
+		<h2 class="tnt">Form Registration</h2><br>
+	</div>
+</div>
+<br>
+<br>
+<div class="container login-body">
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+
+<div class="form-body">
+ 
+    <ul class="nav nav-tabs final-login">
+        <li class="active"><a data-toggle="tab" href="#sectionA">Log In</a></li>
+        <li><a data-toggle="tab" href="#sectionB">Sign Up</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="sectionA" class="tab-pane fade in active">
+        <div class="innter-form">
+            <form class="sa-innate-form" method="post" name="myForm1" action="Sign.in.php" onsubmit="return validate_sign_in()">
+            <label>Username</label>
+            <input type="text" name="username"><br><br>
+            <label>Password</label>
+            <input type="password" name="password">
+            <br><br><br><br>
+            <a href="">Forgot Password?</a>
+            <button type="submit" value="Submit">Sign In</button>
+            </form>
+            </div>
+            <div class="clearfix"></div>
+            
+        </div>
+        <div id="sectionB" class="tab-pane fade">
+			<div class="innter-form">
+            <form class="sa-innate-form" method="post" name="myForm2" action="Sign_in.php" onsubmit="return validate_log_in()">
+            <label>Full Name</label>
+            <input type="text" name="name"><br><br>
+            <label>Gender</label>
+            <select name="gender"> <!-- height isn't getting edited-->
+            <!--<option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Others">Others</option>
+            </select><br><br>
+            <label>Date of Birth</label>
+            <input type="date" name="dob"><br><br>
+			<label>Email Address</label><br>
+            <input type="email" name="email" size="47"><br><br>
+			<label>Username</label>
+            <input type="text" name="username"><br><br>
+			<label>Password</label>
+            <input type="password" name="password"><br>
+			<br><br>
+            <button type="submit" value="Submit">Register Now</button>
+            </form>
+            </div>
+   
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>-->
